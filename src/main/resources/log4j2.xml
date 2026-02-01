@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+    <Appenders>
+
+        <!-- Appender per STDOUT -->
+        <Console name="STDOUT" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"/>
+        </Console>
+
+        <!-- Appender per STDERR -->
+        <Console name="STDERR" target="SYSTEM_ERR">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"/>
+        </Console>
+
+        <!-- Appender asincrono per STDOUT -->
+        <Async name="AsyncSTDOUT">
+            <AppenderRef ref="STDOUT"/>
+        </Async>
+
+        <!-- Appender asincrono per STDERR -->
+        <Async name="AsyncSTDERR">
+            <AppenderRef ref="STDERR"/>
+        </Async>
+
+    </Appenders>
+
+    <Loggers>
+        <!-- Logger per livello INFO su STDOUT, senza ereditare da Root -->
+        <Logger name="susheff.info.logger" level="info" additivity="false">
+            <AppenderRef ref="AsyncSTDOUT"/>
+        </Logger>
+
+        <!-- Logger per livello ERROR su STDERR, senza ereditare da Root -->
+        <Logger name="susheff.error.logger" level="error" additivity="false">
+            <AppenderRef ref="AsyncSTDERR"/>
+        </Logger>
+
+        <!-- Root logger, solo per i messaggi che non sono specificati, su STDOUT -->
+        <Root level="info">
+            <AppenderRef ref="AsyncSTDOUT"/>
+        </Root>
+
+    </Loggers>
+
+</Configuration>
