@@ -48,7 +48,6 @@ public class UtenteController {
 
   @Operation(summary = "Crea un utente")
   @PostMapping("/utenti/{nomeUtente}")
-  //TODO SE ESISTE, L'UTENTE DEVE IMPERSONIFICARSI
   public ResponseEntity<ApiResponse<UtenteResponseDTO>> createUtente(
     @PathVariable String nomeUtente
   ) {
