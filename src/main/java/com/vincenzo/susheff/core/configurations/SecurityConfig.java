@@ -36,9 +36,11 @@ public class SecurityConfig {
   SecurityFilterChain configure(HttpSecurity http, CorsConfigurationSource corsConfigurationSource) throws Exception {
     http
       .cors(cors -> cors.configurationSource(corsConfigurationSource))
-      .csrf(AbstractHttpConfigurer::disable);
+      .csrf(AbstractHttpConfigurer::disable)
+      .authorizeHttpRequests(auth -> auth.anyRequest().permitAll());
 
     return http.build();
   }
+
 
 }
