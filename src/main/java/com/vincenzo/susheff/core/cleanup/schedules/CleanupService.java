@@ -18,7 +18,7 @@ public class CleanupService {
   private final UtenteRepositoryService utenteRepositoryService;
   private final static long minuti_svecchiamento = 180; // 3 ore
 
-  @Scheduled(cron = "0 0 * * * *") // ogni ora (aggiungere uno zero al posto del primo asterisco)
+  //@Scheduled(cron = "0 0 * * * *") // ogni ora (aggiungere uno zero al posto del primo asterisco)
   @Transactional
   public void cleanupTavoli() {
     LocalDateTime dataLimite = LocalDateTime.now().minusMinutes(minuti_svecchiamento);
@@ -27,7 +27,7 @@ public class CleanupService {
     log.debug("Schedule - Fine cleanup tavoli. Totale tavoli cancellati: {}", cancellazioni);
   }
 
-  @Scheduled(cron = "0 0 * * * *") // ogni ora (aggiungere uno zero al posto del primo asterisco)
+  //@Scheduled(cron = "0 0 * * * *") // ogni ora (aggiungere uno zero al posto del primo asterisco)
   @Transactional
   public void cleanupUtenti() {
     LocalDateTime dataLimite = LocalDateTime.now().minusMinutes(minuti_svecchiamento);
