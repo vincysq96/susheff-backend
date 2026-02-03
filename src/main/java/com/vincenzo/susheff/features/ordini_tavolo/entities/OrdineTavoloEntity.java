@@ -15,7 +15,7 @@ import java.util.Set;
 @Getter
 @Setter
 @Entity
-@Table(name = "ordini_tavolo", schema = "susheff")
+@Table(name = "ordini_tavolo")
 @NoArgsConstructor
 public class OrdineTavoloEntity {
 

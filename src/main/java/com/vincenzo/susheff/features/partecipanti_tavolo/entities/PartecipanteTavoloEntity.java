@@ -10,7 +10,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-@Table(name = "partecipanti_tavolo", schema = "susheff")
+@Table(name = "partecipanti_tavolo")
 @NoArgsConstructor
 public class PartecipanteTavoloEntity {
 

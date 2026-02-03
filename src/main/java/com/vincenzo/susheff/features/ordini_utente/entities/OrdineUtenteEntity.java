@@ -10,7 +10,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-@Table(name = "ordini_utente", schema = "susheff")
+@Table(name = "ordini_utente")
 @NoArgsConstructor
 public class OrdineUtenteEntity {
 
