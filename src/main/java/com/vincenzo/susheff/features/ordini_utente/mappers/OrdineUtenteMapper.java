@@ -16,6 +16,7 @@ public class OrdineUtenteMapper {
       entity.getIdOrdineUtente(),
       entity.getOrdineTavolo().getIdOrdineTavolo(),
       entity.getUtente().getIdUtente(),
+      entity.getUtente().getNomeUtente(),
       entity.getCodicePiatto(),
       entity.getQuantita(),
       entity.getNotes()

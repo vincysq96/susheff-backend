@@ -4,6 +4,7 @@ public record OrdineUtenteResponseDTO(
    Integer idOrdineUtente,
    Integer idOrdineTavolo,
    Integer idUtente,
+   String nomeUtente,
    String codicePiatto,
    Integer quantita,
    String notes
